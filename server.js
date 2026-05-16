@@ -25,10 +25,10 @@ app.use(express.urlencoded({
 
 
 // ======================================
-// CARPETA PUBLICA
+// CARPETA FRONTEND
 // ======================================
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "frontend")));
 
 
 // ======================================
@@ -37,27 +37,27 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // INICIO
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(path.join(__dirname, "frontend", "index.html"));
 });
 
 // MENU
 app.get("/menu", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "menu.html"));
+  res.sendFile(path.join(__dirname, "frontend", "menu.html"));
 });
 
 // RESERVAS
 app.get("/reservas", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "reservas.html"));
+  res.sendFile(path.join(__dirname, "frontend", "reservas.html"));
 });
 
 // PROMOCIONES
 app.get("/promociones", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "promociones.html"));
+  res.sendFile(path.join(__dirname, "frontend", "promociones.html"));
 });
 
 // CONTACTO
 app.get("/contacto", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "contacto.html"));
+  res.sendFile(path.join(__dirname, "frontend", "contacto.html"));
 });
 
 
@@ -172,12 +172,10 @@ let reservas = [];
 app.post("/api/reservas", (req, res) => {
 
   const {
-
     nombre,
     personas,
     fecha,
     hora
-
   } = req.body;
 
   const nuevaReserva = {
