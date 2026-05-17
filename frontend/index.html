@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Buen Gusto Cafetería</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
     * {
@@ -218,6 +223,8 @@
       align-items: center;
       gap: 10px;
       transition: 0.3s ease;
+      border: none;
+      cursor: pointer;
     }
 
     .btn-primary {
@@ -335,8 +342,12 @@
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-16px); }
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-16px);
+      }
     }
 
     .section {
@@ -444,192 +455,48 @@
       font-size: 15px;
     }
 
-    .about {
-      background: var(--brown-dark);
-      color: white;
+    .api-section {
+      margin-top: 50px;
+    }
+
+    .api-grid {
       display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 60px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
     }
 
-    .about::before {
-      content: "CAFÉ";
-      position: absolute;
-      font-size: 180px;
-      font-weight: 800;
-      color: rgba(255, 255, 255, 0.035);
-      right: -20px;
-      top: 20px;
-    }
-
-    .about-img {
-      position: relative;
-    }
-
-    .about-img img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      border-radius: 36px;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.28);
-    }
-
-    .about-img::after {
-      content: "";
-      position: absolute;
-      width: 170px;
-      height: 170px;
-      background: var(--brown-soft);
-      border-radius: 50%;
-      left: -45px;
-      bottom: -45px;
-      z-index: -1;
-    }
-
-    .about-text {
-      position: relative;
-      z-index: 2;
-    }
-
-    .about-text span {
-      color: var(--brown-soft);
-      font-weight: 800;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      font-size: 13px;
-    }
-
-    .about-text h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(36px, 5vw, 58px);
-      line-height: 1.05;
-      margin-top: 14px;
-    }
-
-    .about-text p {
-      color: #e8d5c1;
-      line-height: 1.85;
-      margin-top: 22px;
-      max-width: 650px;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 32px;
-    }
-
-    .feature {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 18px;
-      border-radius: 20px;
-    }
-
-    .feature h4 {
-      color: white;
-      margin-bottom: 6px;
-    }
-
-    .feature small {
-      color: #d9b995;
-      line-height: 1.5;
-    }
-
-    .promo {
-      padding: 100px 8%;
-      background:
-        linear-gradient(rgba(58, 36, 21, 0.78), rgba(58, 36, 21, 0.78)),
-        url("img/promo-cafe.jpg") center/cover;
-      text-align: center;
-      color: white;
-    }
-
-    .promo-box {
-      max-width: 850px;
-      margin: auto;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 36px;
-      padding: 55px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
-    }
-
-    .promo-box span {
-      color: #f0c38d;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-weight: 800;
-      font-size: 13px;
-    }
-
-    .promo-box h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 6vw, 72px);
-      margin: 14px 0;
-    }
-
-    .promo-box p {
-      color: #f4dfc8;
-      line-height: 1.8;
-      margin-bottom: 30px;
-    }
-
-    .schedule {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: stretch;
-    }
-
-    .schedule-card {
+    .api-card {
       background: white;
-      padding: 35px;
-      border-radius: 30px;
+      border-radius: 28px;
+      padding: 28px;
       box-shadow: var(--shadow);
-      border: 1px solid rgba(139, 94, 52, 0.12);
+      border: 1px solid rgba(139, 94, 52, 0.1);
     }
 
-    .schedule-card h3 {
-      font-family: "Playfair Display", serif;
+    .api-card h3 {
       color: var(--brown-dark);
-      font-size: 34px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
-    .schedule-card p {
+    .api-card p {
       color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 10px;
+      line-height: 1.7;
+      margin-bottom: 18px;
     }
 
-    .schedule-card strong {
+    .api-card input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 14px;
+      border: 1px solid #ddd;
+      margin-bottom: 14px;
+      font-family: inherit;
+    }
+
+    .mensaje {
+      margin-top: 14px;
       color: var(--brown-dark);
-    }
-
-    .contact-strip {
-      background: var(--cream-2);
-      padding: 32px;
-      border-radius: 30px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      align-items: center;
-      margin-top: 35px;
-    }
-
-    .contact-strip h3 {
-      font-size: 25px;
-      color: var(--brown-dark);
-    }
-
-    .contact-strip p {
-      color: var(--muted);
-      margin-top: 5px;
+      font-weight: 600;
     }
 
     .footer {
@@ -648,34 +515,6 @@
     .footer p {
       color: #d8b895;
       margin: 12px 0 25px;
-    }
-
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-bottom: 26px;
-    }
-
-    .socials a {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 10px 18px;
-      border-radius: 999px;
-      color: #f0c38d;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .socials a:hover {
-      background: var(--brown);
-      color: white;
-      transform: translateY(-3px);
-    }
-
-    .footer small {
-      color: #a98d73;
     }
 
     @media (max-width: 980px) {
@@ -707,33 +546,14 @@
         justify-content: center;
       }
 
-      .products-container,
-      .about,
-      .schedule {
+      .products-container {
         grid-template-columns: 1fr;
-      }
-
-      .about {
-        text-align: center;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-strip {
-        flex-direction: column;
-        text-align: center;
       }
     }
 
     @media (max-width: 560px) {
       .logo-text {
         display: none;
-      }
-
-      .navbar a {
-        font-size: 14px;
       }
 
       .hero h1 {
@@ -745,32 +565,12 @@
         height: 290px;
       }
 
-      .hero-image {
-        min-height: 380px;
-      }
-
       .hero-image img {
         width: 310px;
       }
 
       .mini-card {
         display: none;
-      }
-
-      .section {
-        padding: 70px 6%;
-      }
-
-      .promo {
-        padding: 70px 6%;
-      }
-
-      .promo-box {
-        padding: 35px 22px;
-      }
-
-      .contact-strip {
-        padding: 25px;
       }
     }
   </style>
@@ -780,7 +580,8 @@
 
   <header class="header">
     <a href="#" class="logo">
-      <img src="img/logo.png" alt="Logo Buen Gusto Cafetería">
+      <img src="img/logo.png" alt="Logo Buen Gusto Cafetería" />
+
       <div class="logo-text">
         <h3>Buen Gusto</h3>
         <span>Cafetería</span>
@@ -804,16 +605,23 @@
       </div>
 
       <h1>
-        El sabor que acompaña tus <strong>mejores momentos</strong>
+        El sabor que acompaña tus
+        <strong>mejores momentos</strong>
       </h1>
 
       <p>
-        Un espacio cálido para disfrutar café recién hecho, postres caseros y conversaciones que se sienten como en casa.
+        Un espacio cálido para disfrutar café recién hecho,
+        postres caseros y conversaciones que se sienten como en casa.
       </p>
 
       <div class="hero-buttons">
-        <a href="menu.html" class="btn btn-primary">Ver Menú ☕</a>
-        <a href="reservas.html" class="btn btn-secondary">Reservar Mesa</a>
+        <a href="menu.html" class="btn btn-primary">
+          Ver Menú ☕
+        </a>
+
+        <a href="reservas.html" class="btn btn-secondary">
+          Reservar Mesa
+        </a>
       </div>
 
       <div class="hero-stats">
@@ -837,7 +645,10 @@
     <div class="hero-image">
       <div class="circle"></div>
 
-      <img src="img/cafe-hero.png" alt="Café principal de Buen Gusto">
+      <img
+        src="img/cafe-hero.png"
+        alt="Café principal de Buen Gusto"
+      />
 
       <div class="mini-card one">
         <strong>Especial de la casa</strong>
@@ -854,152 +665,190 @@
   <section class="section products">
     <div class="section-title">
       <span>Nuestros favoritos</span>
+
       <h2>Lo más pedido de la casa</h2>
+
       <p>
-        Sabores suaves, aromas intensos y postres preparados para convertir una pausa cualquiera en un momento especial.
+        Sabores suaves, aromas intensos y postres preparados
+        para convertir una pausa cualquiera en un momento especial.
       </p>
     </div>
 
-    <div class="products-container">
-      <article class="card">
-        <div class="card-img">
-          <img src="img/cafes/latte.jpg" alt="Latte Vainilla">
-          <div class="price-tag">S/. 12.00</div>
-        </div>
+    <div class="products-container" id="productos-container">
 
-        <div class="card-body">
-          <small>Cremoso y suave</small>
-          <h3>Latte Vainilla</h3>
-          <p>Espresso con leche vaporizada, aroma dulce y un toque delicado de vainilla.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-img">
-          <img src="img/cafes/capuccino.jpg" alt="Capuccino">
-          <div class="price-tag">S/. 10.00</div>
-        </div>
-
-        <div class="card-body">
-          <small>Clásico favorito</small>
-          <h3>Capuccino</h3>
-          <p>Café intenso con espuma cremosa, perfecto para comenzar bien el día.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-img">
-          <img src="img/postres/brownie.jpg" alt="Brownie Premium">
-          <div class="price-tag">S/. 8.00</div>
-        </div>
-
-        <div class="card-body">
-          <small>Dulce tentación</small>
-          <h3>Brownie Premium</h3>
-          <p>Brownie húmedo de chocolate, ideal para acompañar cualquier bebida caliente.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="section about">
-    <div class="about-img">
-      <img src="img/cafeteria.jpg" alt="Ambiente de Buen Gusto Cafetería">
     </div>
 
-    <div class="about-text">
-      <span>Una experiencia completa</span>
-      <h2>Más que café, un lugar para quedarte</h2>
+    <!-- NUEVA SECCIÓN API -->
+    <div class="api-section">
 
-      <p>
-        En Buen Gusto Cafetería cuidamos cada detalle: el aroma del café, la textura de los postres,
-        la comodidad del ambiente y la atención cercana. Queremos que cada visita se sienta tranquila,
-        bonita y especial.
-      </p>
+      <div class="section-title">
+        <span>Conectado con Supabase</span>
 
-      <div class="features">
-        <div class="feature">
-          <h4>Café al momento</h4>
-          <small>Bebidas preparadas con cuidado para conservar aroma y sabor.</small>
-        </div>
+        <h2>Registro de clientes</h2>
 
-        <div class="feature">
-          <h4>Postres frescos</h4>
-          <small>Opciones dulces para acompañar tu bebida favorita.</small>
-        </div>
-
-        <div class="feature">
-          <h4>Ambiente cómodo</h4>
-          <small>Ideal para conversar, estudiar, trabajar o relajarte.</small>
-        </div>
-
-        <div class="feature">
-          <h4>Promos semanales</h4>
-          <small>Ofertas especiales para compartir con amigos o familia.</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="promo">
-    <div class="promo-box">
-      <span>Promoción especial</span>
-      <h2>2x1 todos los viernes</h2>
-
-      <p>
-        Disfruta nuestras bebidas seleccionadas en promoción y comparte un buen café con esa persona especial.
-      </p>
-
-      <a href="promociones.html" class="btn btn-primary">Ver Promociones</a>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-title">
-      <span>Te esperamos</span>
-      <h2>Ven por tu café favorito</h2>
-      <p>
-        Estamos listos para atenderte con bebidas calientes, postres y un ambiente perfecto para tu día.
-      </p>
-    </div>
-
-    <div class="schedule">
-      <div class="schedule-card">
-        <h3>Horario</h3>
-        <p><strong>Lunes a Viernes:</strong> 8:00 a.m. - 9:00 p.m.</p>
-        <p><strong>Sábados y Domingos:</strong> 9:00 a.m. - 10:00 p.m.</p>
+        <p>
+          Esta sección guarda datos reales en la base de datos PostgreSQL de Supabase.
+        </p>
       </div>
 
-      <div class="schedule-card">
-        <h3>Servicios</h3>
-        <p><strong>Reservas:</strong> separa una mesa para venir con amigos o familia.</p>
-        <p><strong>Pedidos:</strong> consulta nuestros productos disponibles del día.</p>
-        <p><strong>Promociones:</strong> revisa nuestras ofertas semanales.</p>
-      </div>
-    </div>
+      <div class="api-grid">
 
-    <div class="contact-strip">
-      <div>
-        <h3>¿Listo para disfrutar un buen café?</h3>
-        <p>Revisa nuestro menú o reserva una mesa en pocos segundos.</p>
-      </div>
+        <div class="api-card">
+          <h3>Registrar Cliente</h3>
 
-      <a href="reservas.html" class="btn btn-primary">Reservar ahora</a>
+          <p>
+            Guarda clientes directamente en la base de datos.
+          </p>
+
+          <input
+            type="text"
+            id="nombre"
+            placeholder="Nombre"
+          />
+
+          <input
+            type="text"
+            id="apellido"
+            placeholder="Apellido"
+          />
+
+          <input
+            type="email"
+            id="correo"
+            placeholder="Correo"
+          />
+
+          <input
+            type="text"
+            id="telefono"
+            placeholder="Teléfono"
+          />
+
+          <button class="btn btn-primary" onclick="registrarCliente()">
+            Registrar Cliente
+          </button>
+
+          <div id="mensaje" class="mensaje"></div>
+        </div>
+
+      </div>
     </div>
   </section>
 
   <footer class="footer">
     <h3>BUEN GUSTO CAFETERÍA</h3>
-    <p>Tu nuevo lugar de encuentro en el barrio.</p>
 
-    <div class="socials">
-      <a href="#">Instagram</a>
-      <a href="#">Facebook</a>
-      <a href="#">TikTok</a>
-    </div>
+    <p>
+      Tu nuevo lugar de encuentro en el barrio.
+    </p>
 
-    <small>© 2026 Buen Gusto Cafetería. Todos los derechos reservados.</small>
+    <small>
+      © 2026 Buen Gusto Cafetería.
+      Todos los derechos reservados.
+    </small>
   </footer>
+
+  <script>
+
+    // =========================
+    // CARGAR PRODUCTOS DESDE API
+    // =========================
+
+    async function cargarProductos() {
+
+      try {
+
+        const respuesta = await fetch("/api/productos");
+
+        const productos = await respuesta.json();
+
+        const contenedor = document.getElementById("productos-container");
+
+        contenedor.innerHTML = "";
+
+        productos.forEach(producto => {
+
+          contenedor.innerHTML += `
+            <article class="card">
+
+              <div class="card-img">
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <div class="price-tag">
+                  S/. ${producto.precio}
+                </div>
+              </div>
+
+              <div class="card-body">
+                <small>${producto.categoria}</small>
+
+                <h3>${producto.nombre}</h3>
+
+                <p>${producto.descripcion}</p>
+              </div>
+
+            </article>
+          `;
+        });
+
+      } catch (error) {
+
+        console.log(error);
+
+      }
+    }
+
+    cargarProductos();
+
+
+    // =========================
+    // REGISTRAR CLIENTE
+    // =========================
+
+    async function registrarCliente() {
+
+      const nombre = document.getElementById("nombre").value;
+
+      const apellido = document.getElementById("apellido").value;
+
+      const correo = document.getElementById("correo").value;
+
+      const telefono = document.getElementById("telefono").value;
+
+      try {
+
+        const respuesta = await fetch("/api/clientes", {
+
+          method: "POST",
+
+          headers: {
+            "Content-Type": "application/json"
+          },
+
+          body: JSON.stringify({
+            nombre,
+            apellido,
+            correo,
+            telefono
+          })
+
+        });
+
+        const data = await respuesta.json();
+
+        document.getElementById("mensaje").innerText =
+          data.mensaje;
+
+      } catch (error) {
+
+        console.log(error);
+
+        document.getElementById("mensaje").innerText =
+          "Error al registrar cliente";
+
+      }
+    }
+
+  </script>
 
 </body>
 </html>
