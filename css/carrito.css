@@ -1,0 +1,360 @@
+/* =========================================
+   CARRITO.CSS COMPLETO
+========================================= */
+
+:root {
+    --brown: #8b5e34;
+    --brown-dark: #3a2415;
+    --brown-soft: #b98b5e;
+    --cream: #fff7ed;
+    --cream-2: #f2dfc7;
+    --white: #ffffff;
+}
+
+body {
+    background: var(--cream);
+    color: var(--brown-dark);
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+.cart-main {
+    padding: 120px 0 80px 0;
+    min-height: calc(100vh - 200px);
+}
+
+.cart-header {
+    margin-bottom: 40px;
+}
+
+.cart-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2.8rem;
+    color: var(--brown-dark);
+    margin-bottom: 10px;
+}
+
+.cart-subtitle {
+    color: #726960;
+    font-size: 1rem;
+}
+
+/* =========================================
+   ESTADO: CARRITO VACÍO
+========================================= */
+.empty-cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.empty-cart-box {
+    background: var(--white);
+    padding: 60px 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,.04);
+    max-width: 500px;
+    width: 100%;
+}
+
+.empty-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.empty-text {
+    margin-bottom: 30px;
+    color: #726960;
+}
+
+/* =========================================
+   ESTADO: CARRITO ACTIVO (LAYOUT)
+========================================= */
+.cart-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Contenedor blanco para la tabla (Estilo de la imagen) */
+.cart-products-section {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.04);
+}
+
+/* --- TABLA DE PRODUCTOS --- */
+.cart-table-header {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 1.5fr 1.5fr 0.5fr;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--cream-2);
+    font-weight: 600;
+    color: var(--brown-dark);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* El primer elemento (Producto) alineado a la izquierda */
+.cart-table-header .col-product {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 3fr 1.5fr 1.5fr 1.5fr 0.5fr;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--cream-2);
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+    padding-bottom: 10px;
+}
+
+/* Columna de Producto (Imagen + Texto) */
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.item-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.item-name {
+    font-weight: 600;
+    font-size: 1.05rem;
+}
+
+.item-price, .item-subtotal {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* --- CONTROLES DE CANTIDAD --- */
+.item-qty {
+    display: flex;
+    justify-content: center;
+}
+
+.qty-controls {
+    display: flex;
+    align-items: center;
+    background: var(--cream);
+    border-radius: 10px;
+    overflow: hidden;
+    width: fit-content;
+}
+
+.qty-btn {
+    background: none;
+    border: none;
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    color: var(--brown-dark);
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-btn:hover {
+    background: var(--cream-2);
+}
+
+.qty-input {
+    width: 30px;
+    text-align: center;
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--brown-dark);
+    pointer-events: none; /* Evita escritura manual para no romper lógica */
+}
+
+/* Botón Eliminar */
+.btn-remove {
+    background: var(--cream);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: var(--brown);
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-remove:hover {
+    background: #ffdbdb;
+    color: #d93838;
+    transform: scale(1.1);
+}
+
+/* =========================================
+   SECCIÓN INFERIOR: BOTÓN Y RESUMEN
+========================================= */
+.cart-bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.cart-summary-section {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.04);
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto; /* Empuja el resumen a la derecha */
+}
+
+.summary-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #6d6158;
+}
+
+.summary-divider {
+    border: none;
+    border-top: 1px solid var(--cream-2);
+    margin: 20px 0;
+}
+
+.summary-total {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--brown-dark);
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+    box-sizing: border-box;
+}
+
+.btn-outline {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    border: 1px solid var(--cream-2);
+    background: transparent;
+    color: var(--brown-dark);
+}
+
+.btn-outline:hover {
+    border-color: var(--brown);
+    color: var(--brown);
+    background: var(--white);
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 15px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    background: var(--brown);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: var(--brown-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139,94,52,.2);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 992px) {
+    .cart-bottom-section {
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+    
+    .cart-summary-section {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .btn-outline {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ocultar cabecera de tabla en móvil */
+    .cart-table-header {
+        display: none;
+    }
+
+    .cart-item {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        text-align: left;
+        position: relative;
+        padding: 20px 10px;
+    }
+
+    .item-qty {
+        justify-content: flex-start;
+    }
+
+    /* Reposicionar precios y botón eliminar para formato tarjeta */
+    .item-price::before { content: "Precio: "; font-weight: normal; color: #726960;}
+    .item-subtotal::before { content: "Subtotal: "; font-weight: normal; color: #726960;}
+
+    .btn-remove {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+
+    .cart-products-section {
+        padding: 15px;
+    }
+}

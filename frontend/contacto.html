@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Warm Coffee</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/contacto.css">
+</head>
+<body>
+
+  <!-- ================= HEADER GENERAL ================= -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="navbar__brand" href="index.html">
+        <img class="navbar__logo" src="../img/logo.png" alt="Logo Warm Coffee">
+        <span class="navbar__name">
+          <span class="navbar__title">Warm Coffee</span>
+        </span>
+      </a>
+      <ul class="navbar__menu">
+        <li><a class="navbar__link" href="index.html">Inicio</a></li>
+        <li><a class="navbar__link" href="menu.html">Menú</a></li>
+        <li><a class="navbar__link" href="promociones.html">Promociones</a></li>
+        <li><a class="navbar__link navbar__link--active" href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= CONTENIDO PRINCIPAL ================= -->
+  <main class="page-contacto">
+    
+    <!-- Hero Section -->
+    <section class="hero-contacto fade-in">
+        <div class="container hero-content">
+            <h1 class="hero-title">Contacto</h1>
+            <p class="hero-subtitle">Estamos aquí para ayudarte. Escríbenos o visítanos cuando quieras disfrutar de un buen café.</p>
+        </div>
+    </section>
+
+    <!-- Formulario e Información -->
+    <section class="contacto-wrapper container fade-in">
+        <div class="contacto-grid">
+            
+            <!-- Columna Izquierda: Formulario -->
+            <div class="contacto-card form-card">
+                <form id="contactoForm" class="contacto-form" novalidate>
+                    
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                        <span class="error-msg">Por favor, ingresa tu nombre completo.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo electrónico</label>
+                        <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+                        <span class="error-msg">Por favor, ingresa un correo electrónico válido.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="asunto">Asunto</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="" disabled selected>Selecciona un asunto</option>
+                            <option value="reservas">Reservas</option>
+                            <option value="dudas">Dudas generales</option>
+                            <option value="eventos">Eventos privados</option>
+                            <option value="reclamos">Sugerencias y reclamos</option>
+                        </select>
+                        <span class="error-msg">Por favor, selecciona el asunto de tu mensaje.</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                        <span class="error-msg">El mensaje no puede estar vacío.</span>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        Enviar mensaje <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Columna Derecha: Información -->
+            <div class="contacto-card info-card">
+                <h2 class="info-title">Información de contacto</h2>
+                
+                <ul class="info-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot info-icon"></i>
+                        <div class="info-text">
+                            <strong>Dirección</strong>
+                            <p>Av. Aroma 245, Miraflores,<br>Lima - Perú</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone info-icon"></i>
+                        <div class="info-text">
+                            <strong>Teléfono</strong>
+                            <p>+51 987 654 321</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope info-icon"></i>
+                        <div class="info-text">
+                            <strong>Correo</strong>
+                            <p>hola@warmcoffee.pe</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-regular fa-clock info-icon"></i>
+                        <div class="info-text">
+                            <strong>Horario de atención</strong>
+                            <p>Lun - Vie: 7:00 a. m. - 9:00 p. m.<br>Sáb - Dom: 8:00 a. m. - 10:00 p. m.</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="social-section">
+                    <strong>Síguenos</strong>
+                    <div class="social-icons">
+                        <a href="https://instagram.com" target="_blank" class="social-btn instagram" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" class="social-btn facebook" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" class="social-btn tiktok" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="mapa-wrapper container fade-in">
+        <div class="map-container">
+            <!-- 
+              INSTRUCCIONES PARA MODIFICAR EL MAPA:
+              1. En el atributo 'href' del <a>, coloca el link directo de tu cafetería en Google Maps (para cuando el usuario haga clic).
+              2. En el atributo 'src' del <iframe>, coloca el link de incrustación (embed) de Google Maps.
+            -->
+            <a href="https://maps.google.com/?q=Av.+Aroma+245,+Miraflores,+Lima" target="_blank" class="map-overlay" aria-label="Abrir en Google Maps"></a>
+            
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.7634351368943!2d-77.0312!3d-12.1229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA3JzIyLjQiUyA3N8KwMDEnNTIuMyJX!5e0!3m2!1ses!2spe!4v1690000000000!5m2!1ses!2spe" 
+                width="100%" 
+                height="450" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER GENERAL ================= -->
+  <footer class="site-footer" id="contacto">
+    <div class="container footer__grid">
+      <section aria-labelledby="footer-brand-title">
+        <a class="footer__brand" href="index.html">
+          <img class="footer__logo" src="../img/logo.png" alt="Logo de Warm Coffee" />
+          <span class="footer__title" id="footer-brand-title">Warm Coffee</span>
+        </a>
+        <p class="footer__text">
+          Café de especialidad, postres artesanales y un espacio elegante para compartir tus mejores momentos.
+        </p>
+        <div class="footer__social" aria-label="Redes sociales">
+          <a href="#" aria-label="Instagram de Warm Coffee">Instagram</a>
+          <a href="#" aria-label="Facebook de Warm Coffee">Facebook</a>
+          <a href="#" aria-label="TikTok de Warm Coffee">TikTok</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="footer-contact-title">
+        <h2 class="footer__heading" id="footer-contact-title">Contacto</h2>
+        <ul class="footer__list">
+          <li>Dirección: Av. Aroma 245, Miraflores, Lima</li>
+          <li>Teléfono: +51 987 654 321</li>
+          <li>Correo: hola@warmcoffee.pe</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="footer-hours-title">
+        <h2 class="footer__heading" id="footer-hours-title">Horario de atención</h2>
+        <ul class="footer__list">
+          <li>Lunes a viernes: 7:00 a. m. - 9:00 p. m.</li>
+          <li>Sábados: 8:00 a. m. - 10:00 p. m.</li>
+          <li>Domingos: 8:00 a. m. - 7:00 p. m.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 Warm Coffee. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- ================= MODAL DE ÉXITO ================= -->
+  <div id="modalExito" class="modal-overlay">
+      <div class="modal-box">
+          <button class="modal-close-btn" aria-label="Cerrar modal">&times;</button>
+          <div class="modal-icon-wrapper">
+              <i class="fa-solid fa-check"></i>
+          </div>
+          <h3 class="modal-title">Mensaje enviado correctamente.</h3>
+          <p class="modal-text">Nos pondremos en contacto contigo muy pronto.</p>
+          <button class="btn-modal-ok">Aceptar</button>
+      </div>
+  </div>
+
+  <script src="../js/contacto.js"></script>
+</body>
+</html>

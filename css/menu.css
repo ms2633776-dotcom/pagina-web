@@ -1,0 +1,562 @@
+/* =========================================
+   MENU.CSS COMPLETO
+========================================= */
+
+:root {
+    --brown: #8b5e34;
+    --brown-dark: #3a2415;
+    --brown-soft: #b98b5e;
+    --cream: #fff7ed;
+    --cream-2: #f2dfc7;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--cream);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.floating-cart{
+    position:absolute !important;
+
+    right:30px !important;
+    bottom:30px !important;
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    z-index:999999 !important;
+
+    background:var(--brown);
+
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    box-shadow:
+    0 15px 35px rgba(139,94,52,.35);
+
+    transition:.3s;
+    top: 12px;
+}
+
+.floating-cart:hover{
+    transform:translateY(-5px) scale(1.05);
+
+    background:var(--brown-dark);
+}
+
+.floating-cart img.cart-icon {
+    width: 30px;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+.cart-count{
+    position:absolute;
+
+    top:-5px;
+    right:-5px;
+
+    width:22px;
+    height:22px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    color:var(--brown);
+
+    font-size:12px;
+    font-weight:700;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* =========================================
+   HERO
+========================================= */
+/* 1. CONTENEDOR PRINCIPAL: Más alto y centrado perfecto */
+.menu-hero {
+    position: relative;
+    min-height: 480px; /* Aumentamos la altura de 400px a 480px para que destaque más */
+    
+    /* Flexbox para garantizar el centrado vertical y horizontal */
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(58, 36, 21, 0.65), /* Overlay oscuro corporativo */
+            rgba(58, 36, 21, 0.65)
+        ),
+        url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1920&q=80');;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* 2. CONTENEDORES INTERNOS: Limpiamos espacios residuales */
+.menu-hero__container {
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 20px; /* Solo padding lateral */
+}
+
+.menu-hero__content {
+    /* IMPORTANTE: Eliminamos el padding-top: 80px que tenías antes */
+    padding: 0; 
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* 3. TIPOGRAFÍAS: Ajustamos las separaciones (márgenes) */
+.menu-hero__eyebrow {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px; /* Reducimos el espacio para que esté más pegado al H1 */
+    display: block;
+    color: #f9f1e8; 
+}
+
+.menu-hero__title {
+    font-family: "Playfair Display", serif;
+    color: white;
+    font-size: 3.8rem; /* Ligeramente más grande */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.menu-hero__subtitle {
+    font-family: var(--font-body, 'Inter', sans-serif);
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: #f9f1e8;
+    line-height: 1.6;
+}
+/* =========================================
+   FILTROS
+========================================= */
+
+.menu-filters {
+    max-width: 1300px;
+
+    margin: 35px auto 0;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    justify-content: center;
+}
+
+.filter-btn {
+    border: none;
+
+    background: white;
+
+    padding: 14px 22px;
+
+    border-radius: 999px;
+
+    cursor: pointer;
+
+    color: var(--brown-dark);
+
+    font-weight: 600;
+
+    transition: .3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--brown);
+    color: white;
+}
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.menu-section {
+    max-width: 1300px;
+
+    margin: 70px auto;
+
+    padding: 0 8%;
+}
+
+.section-heading {
+    margin-bottom: 35px;
+}
+
+.section-heading h2 {
+    font-size: 2rem;
+
+    color: var(--brown-dark);
+
+    margin-bottom: 12px;
+
+    font-family: "Playfair Display", serif;
+}
+
+.section-heading p {
+    color: #6b635c;
+
+    line-height: 1.8;
+
+    max-width: 900px;
+}
+
+/* =========================================
+   GRID PRODUCTOS
+========================================= */
+
+.products-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill,minmax(250px,1fr));
+
+    gap: 24px;
+}
+
+/* =========================================
+   CARD PRODUCTO
+========================================= */
+
+.product-card {
+    background: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition: .35s ease;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.06);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 18px 45px rgba(139,94,52,.18);
+}
+
+.product-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.product-content {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-content h3 {
+    color: var(--brown-dark);
+
+    font-size: 1.1rem;
+
+    margin-bottom: 10px;
+}
+
+.product-content p {
+    color: #726960;
+
+    font-size: .92rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+
+    flex-grow: 1;
+}
+
+.product-footer {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.product-footer span {
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    color: var(--brown);
+}
+
+/* =========================================
+   BOTÓN +
+========================================= */
+
+.add-btn {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--brown);
+
+    color: white;
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.add-btn:hover {
+    transform: scale(1.12);
+
+    background: var(--brown-dark);
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.menu-cta {
+    padding: 70px 60px;
+}
+
+.cta-box {
+    max-width: 1000px;
+
+    margin: auto;
+
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #fffbf7,
+        #fff7ef
+    );
+
+    border-radius: 30px;
+
+    padding: 70px 50px;
+
+    box-shadow:
+        0 20px 50px rgba(139,94,52,.1);
+}
+
+.cta-box h2 {
+    font-size: 3rem;
+
+    color: var(--brown-dark);
+
+    margin-bottom: 15px;
+
+    font-family: "Playfair Display", serif;
+}
+
+.cta-box p {
+    color: #6d6158;
+
+    margin-bottom: 35px;
+}
+
+.cta-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 15px 28px;
+
+    border-radius: 999px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--brown);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--brown-dark);
+}
+
+.btn-secondary {
+    background: var(--brown);
+    color: rgb(255, 255, 255);
+}
+
+.btn-secondary:hover {
+    background: var(--brown-dark);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: var(--brown-dark);
+
+    color: white;
+
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 60px 8%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 40px;
+}
+
+.footer-brand img {
+    width: 70px;
+
+    margin-bottom: 15px;
+}
+
+.footer h3,
+.footer h4 {
+    margin-bottom: 15px;
+}
+
+.footer p,
+.footer a {
+    color: rgba(255,255,255,.8);
+
+    text-decoration: none;
+
+    line-height: 1.8;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+
+    padding: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,.1);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width: 992px){
+
+    .hero-banner{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content{
+        padding:50px 35px;
+    }
+
+    .hero-image{
+        height:300px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .products-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .cta-box h2{
+        font-size:2.2rem;
+    }
+
+}
+
+@media(max-width:580px){
+
+    .products-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content h1{
+        font-size:3.4rem;
+    }
+
+    .hero-content{
+        padding:40px 25px;
+    }
+
+}
+
+/* ANIMACIONES Y UTILIDADES */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}

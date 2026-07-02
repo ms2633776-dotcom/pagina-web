@@ -1,0 +1,434 @@
+/* VARIABLES DE COLOR Y ESTILO */
+:root {
+    --primary: #8b5e34;
+    --primary-hover: #7a522d;
+    --dark: #3a2415;
+    --dark-gradient: linear-gradient(135deg, #482f1d 0%, #3a2415 100%);
+    --bg-cream: #fff7ed;
+    --bg-cream-dark: #f3e8da;
+    --text-light: #f9f1e8;
+    --text-dark: #2a1a0f;
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    --radius-lg: 20px;
+    --radius-sm: 8px;
+    --shadow-soft: 0 10px 30px rgba(58, 36, 21, 0.08);
+    --shadow-hover: 0 15px 40px rgba(58, 36, 21, 0.15);
+}
+
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--cream);
+}
+
+/* 1. HEADER */
+.header {
+    background-color: var(--bg-cream);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    text-decoration: none;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--primary);
+}
+
+.cart-icon {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* 2. HERO DE PROMOCIONES */
+.hero-promociones {
+    position: relative;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(58, 36, 21, 0.65); /* Overlay oscuro elegante */
+    z-index: 1;
+}
+
+.hero-content {
+    padding: 0; 
+    margin-top: 50px;
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+}
+
+.hero-subtitle {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    display: block;
+    color: var(--bg-cream);
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* 3. SECCIÓN DE PROMOCIONES */
+.promociones-section {
+    padding: 60px 20px;
+}
+
+.promociones-header {
+    text-align: right;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    color: var(--primary);
+}
+
+.promociones-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* TARJETAS HORIZONTALES */
+.promo-card {
+    display: flex;
+    background: var(--dark-gradient);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    color: var(--text-light);
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.promo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.promo-content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.promo-badge {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #e2d1c3;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.promo-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.promo-desc {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    color: #d1c1b3;
+    font-weight: 300;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.promo-image {
+    width: 40%;
+    min-width: 300px;
+}
+
+.promo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 4. CTA FINAL */
+.cta-section {
+    margin-bottom: 80px;
+}
+
+.cta-box {
+    background-color: var(--bg-cream-dark);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-soft);
+}
+
+.cta-icon {
+    font-size: 3rem;
+    margin-right: 20px;
+}
+
+.cta-text h2 {
+    font-family: var(--font-heading);
+    color: var(--dark);
+    margin-bottom: 5px;
+}
+
+.btn-whatsapp {
+    background-color: var(--dark);
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-whatsapp:hover {
+    background-color: #24160d;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: var(--brown-dark);
+
+    color: white;
+
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1300px;
+
+    margin: auto;
+
+    padding: 60px 8%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 40px;
+}
+
+.footer-brand img {
+    width: 70px;
+
+    margin-bottom: 15px;
+}
+
+.footer h3,
+.footer h4 {
+    margin-bottom: 15px;
+}
+
+.footer p,
+.footer a {
+    color: rgba(255,255,255,.8);
+
+    text-decoration: none;
+
+    line-height: 1.8;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+
+    padding: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,.1);
+}
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.modal-content {
+    background-color: var(--bg-cream);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px; right: 25px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--dark);
+}
+
+.modal-title {
+    font-family: var(--font-heading);
+    color: var(--dark);
+    font-size: 2rem;
+    margin: 15px 0;
+}
+
+.modal-desc {
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.modal-info {
+    background: #eadecd;
+    padding: 15px;
+    border-radius: var(--radius-sm);
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+.modal-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+/* ANIMACIONES Y UTILIDADES */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .promo-card {
+        flex-direction: column-reverse;
+    }
+    .promo-image {
+        width: 100%;
+        height: 250px;
+    }
+    .cta-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .cta-icon {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .nav-menu {
+        display: none; /* En un proyecto real aquí iría un menú hamburguesa */
+    }
+    .promo-content {
+        padding: 30px 20px;
+    }
+    .promo-title {
+        font-size: 1.8rem;
+    }
+}

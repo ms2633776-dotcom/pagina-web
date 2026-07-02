@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warm Coffee | Tu Carrito</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/menu.css"> <link rel="stylesheet" href="../css/carrito.css">
+</head>
+
+<body>
+
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="navbar__brand" href="index.html">
+        <img class="navbar__logo" src="../img/logo.png" alt="Logo Warm Coffee">
+        <span class="navbar__name">
+          <span class="navbar__title">Warm Coffee</span>
+        </span>
+      </a>
+
+      <ul class="navbar__menu">
+        <li><a class="navbar__link" href="index.html">Inicio</a></li>
+        <li><a class="navbar__link" href="menu.html">Menú</a></li>
+        <li><a class="navbar__link" href="promociones.html">Promociones</a></li>
+        <li><a class="navbar__link" href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="cart-main">
+    <section class="container fade-in">
+      
+      <div class="cart-header">
+        <h1 class="cart-title">Tu Carrito</h1>
+        <p class="cart-subtitle">Revisa tus productos antes de continuar.</p>
+      </div>
+
+      <div id="empty-cart-state" class="empty-cart-container" style="display: none;">
+        <div class="empty-cart-box">
+          <h2 class="empty-title">Tu carrito está vacío</h2>
+          <p class="empty-text">Aún no has agregado ningún producto de nuestro menú.</p>
+          <a href="menu.html" class="btn-primary">Ir al menú</a>
+        </div>
+      </div>
+
+      <div id="active-cart-state" class="cart-layout" style="display: none;">
+        
+        <div class="cart-products-section">
+           <div class="cart-table-header">
+             <div class="col-product">Producto</div>
+             <div class="col-price">Precio</div>
+             <div class="col-qty">Cantidad</div>
+             <div class="col-subtotal">Subtotal</div>
+             <div class="col-action"></div>
+           </div>
+           <div id="cart-items-container">
+             </div>
+        </div>
+
+        <div class="cart-bottom-section">
+          
+          <div>
+            <a href="menu.html" class="btn-outline">Seguir comprando</a>
+          </div>
+          
+          <aside class="cart-summary-section">
+            <h3 class="summary-title">Resumen de Compra</h3>
+            
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <span id="summary-subtotal">S/ 0.00</span>
+            </div>
+            
+            <div class="summary-row">
+              <span>IGV (0%)</span>
+              <span id="summary-igv">S/ 0.00</span>
+            </div>
+            
+            <div class="summary-row summary-discount">
+              <span>Descuento</span>
+              <span id="summary-discount">S/ 0.00</span>
+            </div>
+            
+            <hr class="summary-divider">
+            
+            <div class="summary-row summary-total">
+              <span>Total</span>
+              <span id="summary-total">S/ 0.00</span>
+            </div>
+            
+            <div> <a href= "checkout.html" class="btn-primary btn-block">Continuar al pago</a> </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacto">
+    <div class="container footer__grid">
+      <section aria-labelledby="footer-brand-title">
+        <a class="footer__brand" href="index.html">
+          <img class="footer__logo" src="/img/logo.png" alt="Logo de Warm Coffee" />
+          <span class="footer__title" id="footer-brand-title">Warm Coffee</span>
+        </a>
+        <p class="footer__text">
+          Café de especialidad, postres artesanales y un espacio elegante para compartir tus mejores momentos.
+        </p>
+        <div class="footer__social" aria-label="Redes sociales">
+          <a href="#" aria-label="Instagram de Warm Coffee">Instagram</a>
+          <a href="#" aria-label="Facebook de Warm Coffee">Facebook</a>
+          <a href="#" aria-label="TikTok de Warm Coffee">TikTok</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="footer-contact-title">
+        <h2 class="footer__heading" id="footer-contact-title">Contacto</h2>
+        <ul class="footer__list">
+          <li>Dirección: Av. Aroma 245, Miraflores, Lima</li>
+          <li>Teléfono: +51 987 654 321</li>
+          <li>Correo: hola@warmcoffee.pe</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="footer-hours-title">
+        <h2 class="footer__heading" id="footer-hours-title">Horario de atención</h2>
+        <ul class="footer__list">
+          <li>Lunes a viernes: 7:00 a. m. - 9:00 p. m.</li>
+          <li>Sábados: 8:00 a. m. - 10:00 p. m.</li>
+          <li>Domingos: 8:00 a. m. - 7:00 p. m.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 Warm Coffee. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="../js/carrito.js"></script>
+</body>
+</html>

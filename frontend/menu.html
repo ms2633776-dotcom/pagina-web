@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warm Coffee | Menú</title>
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/menu.css">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <nav class="navbar container">
+
+      <a class="navbar__brand" href="index.html">
+        <img class="navbar__logo" src="../img/logo.png" alt="Logo Warm Coffee">
+        <span class="navbar__name">
+          <span class="navbar__title">Warm Coffee</span>
+        </span>
+      </a>
+
+      <a href="carrito.html" class="floating-cart">
+        <img src = "../img/carrito.png" alt = "Carrito de compras" class = "cart-icon">
+      <span class="cart-count">0</span>
+    </a>
+
+      <ul class="navbar__menu">
+        <li><a class="navbar__link" href="index.html">Inicio</a></li>
+        <li><a class="navbar__link navbar__link--active" href="menu.html">Menú</a></li>
+        <li><a class="navbar__link" href="promociones.html">Promociones</a></li>
+        <li><a class="navbar__link" href="contacto.html">Contacto</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="menu-hero">
+    <div class="container fade-in">
+        <div class="menu-hero__content">
+            
+            <span class="menu-hero__eyebrow">Nuestra Carta</span>
+
+            <h1 class="menu-hero__title">
+                Nuestro Menú
+            </h1>
+
+            <p class="menu-hero__subtitle">
+                Café de especialidad, postres artesanales y opciones para cada momento del día.
+            </p>
+
+        </div>
+    </div>
+</section>
+
+    <!-- FILTROS -->
+    <section class="menu-filters-section fade-in">
+    <div class="menu-filters">
+
+        <button class="filter-btn active"
+                data-filter="all">
+            Todos
+        </button>
+
+        <button class="filter-btn"
+                data-filter="cafes">
+            Cafés
+        </button>
+
+        <button class="filter-btn"
+                data-filter="frios">
+            Fríos
+        </button>
+
+        <button class="filter-btn"
+                data-filter="te">
+            Té
+        </button>
+
+        <button class="filter-btn"
+                data-filter="postres">
+            Postres
+        </button>
+
+        <button class="filter-btn"
+                data-filter="salados">
+            Salados
+        </button>
+
+        <button class="filter-btn"
+                data-filter="saludables">
+            Saludables
+        </button>
+    </div>
+
+</section>
+
+    <!-- CAFETERÍA -->
+    <section class="menu-section" id="cafes" data-category="cafes">
+    <div class="section-heading fade-in">
+        <h2>☕ Cafetería Clásica & Especialidades </h2>
+        <p>
+            El alma de nuestra casa. Trabajamos exclusivamente con granos de especialidad 100% Arábica, 
+            seleccionados de fincas sostenibles y tostados al punto perfecto.
+        </p>
+    </div>
+
+    <div class="products-grid">
+
+        <article class="product-card fade-in" data-category="cafes" data-product-id="espresso">
+            <img src="../img/espresso.jpg" alt="Espresso / Ristretto">
+            <div class="product-content">
+                <h3>Espresso / Ristretto</h3>
+                <p>La esencia pura del café.</p>
+                <div class="product-footer">
+                    <span>S/ 8.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="cafes" data-product-id="americano">
+            <img src="../img/americano.jpg" alt="Americano">
+            <div class="product-content">
+                <h3>Americano</h3>
+                <p>Espresso diluido en agua caliente, suave y aromático.</p>
+                <div class="product-footer">
+                    <span>S/ 10.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="cafes" data-product-id="macchiato">
+            <img src="../img/macchiato.jpg" alt="Macchiato">
+            <div class="product-content">
+                <h3>Macchiato</h3>
+                <p>Espresso con una sutil nube de crema de leche.</p>
+                <div class="product-footer">
+                    <span>S/ 11.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="cafes" data-product-id="cappuccino">
+            <img src="../img/cappuccino.jpg" alt="Cappuccino">
+            <div class="product-content">
+                <h3>Cappuccino</h3>
+                <p>Equilibrio perfecto de espresso, leche vaporizada y abundante espuma.</p>
+                <div class="product-footer">
+                    <span>S/ 14.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="cafes" data-product-id="latte-macchiato">
+            <img src="../img/latte-macchiato.jpg" alt="Latte Macchiato">
+            <div class="product-content">
+                <h3>Latte Macchiato</h3>
+                <p>Leche cremosa manchada con un shot de espresso.</p>
+                <div class="product-footer">
+                    <span>S/ 15.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="cafes" data-product-id="flat-white">
+            <img src="../img/flat-white.jpg" alt="Flat White">
+            <div class="product-content">
+                <h3>Flat White</h3>
+                <p>Doble shot de espresso con una capa fina de leche aterciopelada.</p>
+                <div class="product-footer">
+                    <span>S/ 16.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="cafes" data-product-id="mocaccino">
+            <img src="../img/mocaccino.jpg" alt="Mocaccino">
+            <div class="product-content">
+                <h3>Mocaccino</h3>
+                <p>Espresso, chocolate artesanal, leche vaporizada y un toque de cacao en polvo.</p>
+                <div class="product-footer">
+                    <span>S/ 17.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+    <!-- BEBIDAS FRÍAS -->
+    <section class="menu-section" id="frios" data-category="frios">
+    <div class="section-heading fade-in">
+        <h2>🧊 Bebidas Frías & Frappés</h2>
+        <p>
+            El lado más refrescante del café y la textura que enamora. 
+            Aquí combinamos la energía de nuestras extracciones en frío con la cremosidad del hielo frappé y toques dulces.
+        </p>
+    </div>
+
+    <div class="products-grid">
+
+        <article class="product-card fade-in" data-category="frios" data-product-id="iced-latte">
+            <img src="../img/iced-latte.jpg" alt="Iced Latte">
+            <div class="product-content">
+                <h3>Iced Latte</h3>
+                <p>Espresso con leche fría servido sobre hielo.</p>
+                <div class="product-footer">
+                    <span>S/ 15.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="frios" data-product-id="cold-brew">
+            <img src="../img/cold-brew.jpg" alt="Cold Brew">
+            <div class="product-content">
+                <h3>Cold Brew</h3>
+                <p>Café extraído en frío durante 18 horas.</p>
+                <div class="product-footer">
+                    <span>S/ 16.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="frios" data-product-id="frappe-clasico">
+            <img src="../img/frappe-clasico.jpg" alt="Frappé Clásico">
+            <div class="product-content">
+                <h3>Frappé Clásico</h3>
+                <p>Café blended con hielo y crema batida.</p>
+                <div class="product-footer">
+                    <span>S/ 18.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="frios" data-product-id="cookies-frappe">
+            <img src="../img/cookies-frappe.jpg" alt="Cookies & Cream Frappé">
+            <div class="product-content">
+                <h3>Cookies & Cream Frappé</h3>
+                <p>Base cremosa con galletas de chocolate.</p>
+                <div class="product-footer">
+                    <span>S/ 19.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="frios" data-product-id="iced-matcha">
+            <img src="../img/iced-matcha.jpg" alt="Iced Matcha Latte">
+            <div class="product-content">
+                <h3>Iced Matcha Latte</h3>
+                <p>Té matcha premium con leche fría y hielo.</p>
+                <div class="product-footer">
+                    <span>S/ 18.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+    <!-- =========================================
+     TÉ & INFUSIONES
+========================================= -->
+<section class="menu-section" id="te" data-category="te">
+    <div class="section-heading fade-in">
+        <h2>🫖 Té & Infusiones</h2>
+        <p>
+            Un viaje de aromas y bienestar en cada hebra. Seleccionamos cuidadosamente hojas sueltas,
+            flores y especias del mundo para ofrecerte una experiencia reconfortante.
+        </p>
+    </div>
+
+    <div class="products-grid">
+
+        <article class="product-card fade-in" data-category="te" data-product-id="chai-latte">
+            <img src="../img/chai-latte.jpg" alt="Chai Latte">
+            <div class="product-content">
+                <h3>Chai Latte</h3>
+                <p>Mezcla de té negro, especias exóticas y leche vaporizada.</p>
+                <div class="product-footer">
+                    <span>S/ 15.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="te" data-product-id="sencha">
+            <img src="../img/sencha.jpg" alt="Té Verde Sencha">
+            <div class="product-content">
+                <h3>Té Verde Sencha</h3>
+                <p>Antioxidante, suave y con notas herbales.</p>
+                <div class="product-footer">
+                    <span>S/ 10.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="te" data-product-id="earl-grey">
+            <img src="../img/earl-grey.jpg" alt="Earl Grey">
+            <div class="product-content">
+                <h3>Earl Grey</h3>
+                <p>Té negro aromatizado con aceite de bergamota.</p>
+                <div class="product-footer">
+                    <span>S/ 10.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="te" data-product-id="frutos-rojos">
+            <img src="../img/frutos-rojos.jpg" alt="Infusión de Frutos Rojos">
+            <div class="product-content">
+                <h3>Infusión de Frutos Rojos</h3>
+                <p>Fresas, arándanos y moras. Libre de teína.</p>
+                <div class="product-footer">
+                    <span>S/ 11.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="te" data-product-id="manzanilla-menta">
+            <img src="../img/manzanilla-menta.jpg" alt="Manzanilla y Menta">
+            <div class="product-content">
+                <h3>Manzanilla y Menta</h3>
+                <p>Combinación relajante y digestiva.</p>
+                <div class="product-footer">
+                    <span>S/ 9.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- =========================================
+     PASTELERÍA & BOLLERÍA
+========================================= -->
+<section class="menu-section" id="postres" data-category="postres">
+    <div class="section-heading fade-in">
+        <h2>🥐 Pastelería & Bollería</h2>
+        <p>
+            El acompañante perfecto de una buena taza. Horneamos diariamente de manera artesanal,
+            utilizando mantequilla real e ingredientes frescos.
+        </p>
+    </div>
+
+    <div class="products-grid">
+
+        <article class="product-card fade-in" data-category="pasteleria" data-product-id="croissant">
+            <img src="../img/croissant.jpg" alt="Croissant Clásico">
+            <div class="product-content">
+                <h3>Croissant Clásico</h3>
+                <p>De pura mantequilla, crujiente por fuera y tierno por dentro.</p>
+                <div class="product-footer">
+                    <span>S/ 8.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="pasteleria" data-product-id="pain-chocolat">
+            <img src="../img/pain-chocolat.jpg" alt="Pain au Chocolat">
+            <div class="product-content">
+                <h3>Pain au Chocolat</h3>
+                <p>Croissant relleno de chocolate semi-amargo.</p>
+                <div class="product-footer">
+                    <span>S/ 10.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="pasteleria" data-product-id="muffin-arandanos">
+            <img src="../img/muffin-arandanos.jpg" alt="Muffin de Arándanos">
+            <div class="product-content">
+                <h3>Muffin de Arándanos</h3>
+                <p>Esponjoso y cargado de fruta fresca.</p>
+                <div class="product-footer">
+                    <span>S/ 9.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="pasteleria" data-product-id="cinnamon-roll">
+            <img src="../img/cinnamon-roll.jpg" alt="Cinnamon Roll">
+            <div class="product-content">
+                <h3>Cinnamon Roll</h3>
+                <p>Rollo de canela glaseado servido tibio.</p>
+                <div class="product-footer">
+                    <span>S/ 12.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="pasteleria" data-product-id="cheesecake">
+            <img src="../img/cheesecake.jpg" alt="Cheesecake">
+            <div class="product-content">
+                <h3>Cheesecake Frutos Rojos</h3>
+                <p>Cremoso con base crocante de galleta.</p>
+                <div class="product-footer">
+                    <span>S/ 16.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="pasteleria" data-product-id="brownie">
+            <img src="../img/brownie.jpg" alt="Brownie">
+            <div class="product-content">
+                <h3>Brownie con Nuez</h3>
+                <p>Chocolate intenso con textura crocante.</p>
+                <div class="product-footer">
+                    <span>S/ 11.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- =========================================
+     OPCIONES SALADAS
+========================================= -->
+<section class="menu-section" id="salados" data-category="salados">
+    <div class="section-heading fade-in">
+        <h2>🥪 Opciones Saladas</h2>
+        <p>
+            Mordiscos que reconfortan a cualquier hora. Elaborados al momento con panes de masa madre
+            y baguettes rústicas.
+        </p>
+    </div>
+
+    <div class="products-grid">
+
+        <article class="product-card fade-in" data-category="salados" data-product-id="caprese">
+            <img src="../img/caprese.jpg" alt="Tostado Caprese">
+            <div class="product-content">
+                <h3>Tostado Caprese</h3>
+                <p>Mozzarella, tomate confitado y pesto artesanal.</p>
+                <div class="product-footer">
+                    <span>S/ 18.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="salados" data-product-id="avocado-toast">
+            <img src="../img/avocado-toast.jpg" alt="Avocado Toast">
+            <div class="product-content">
+                <h3>Avocado Toast</h3>
+                <p>Guacamole artesanal, huevo poché y chili flakes.</p>
+                <div class="product-footer">
+                    <span>S/ 22.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="salados" data-product-id="pavo-brie">
+            <img src="../img/pavo-brie.jpg" alt="Sandwich de Pavo y Brie">
+            <div class="product-content">
+                <h3>Sandwich de Pavo y Brie</h3>
+                <p>Queso brie fundido, rúcula y mermelada de higos.</p>
+                <div class="product-footer">
+                    <span>S/ 24.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="salados" data-product-id="bagel-salmon">
+            <img src="../img/bagel-salmon.jpg" alt="Bagel de Salmón">
+            <div class="product-content">
+                <h3>Bagel de Salmón</h3>
+                <p>Salmón ahumado, queso crema y alcaparras.</p>
+                <div class="product-footer">
+                    <span>S/ 28.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="salados" data-product-id="quiche">
+            <img src="../img/quiche.jpg" alt="Quiche">
+            <div class="product-content">
+                <h3>Quiche del Día</h3>
+                <p>Tarta artesanal con opciones vegetarianas o de carne.</p>
+                <div class="product-footer">
+                    <span>S/ 20.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- =========================================
+     OPCIONES SALUDABLES
+========================================= -->
+<section class="menu-section" id="saludables" data-category="saludables">
+    <div class="section-heading fade-in">
+        <h2>🌿 Opciones Saludables & Bowls</h2>
+        <p>
+            Energía natural y nutrientes para activar tu cuerpo. Porque comer bien también puede ser
+            delicioso.
+        </p>
+    </div>
+
+    <div class="products-grid">
+
+        <article class="product-card fade-in" data-category="saludables" data-product-id="acai">
+            <img src="../img/acai.jpg" alt="Acai Bowl">
+            <div class="product-content">
+                <h3>Acai Bowl</h3>
+                <p>Acai orgánico, fresas, plátano, granola y chía.</p>
+                <div class="product-footer">
+                    <span>S/ 24.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="saludables" data-product-id="parfait">
+            <img src="../img/parfait.jpg" alt="Yogurt Parfait">
+            <div class="product-content">
+                <h3>Yogurt Parfait</h3>
+                <p>Yogurt griego, miel, frutos secos y frutas frescas.</p>
+                <div class="product-footer">
+                    <span>S/ 15.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+        <article class="product-card fade-in" data-category="saludables" data-product-id="smoothie-verde">
+            <img src="../img/smoothie-verde.jpg" alt="Smoothie Verde">
+            <div class="product-content">
+                <h3>Smoothie Verde</h3>
+                <p>Espinaca, piña, plátano, jengibre y agua de coco.</p>
+                <div class="product-footer">
+                    <span>S/ 16.00</span>
+                    <button class="add-btn">+</button>
+                </div>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<!-- =========================================
+     CTA FINAL
+========================================= -->
+<section class="menu-cta">
+    <div class="cta-box fade-in">
+        <h2>¿Necesitas ayuda para elegir?</h2>
+        <p>
+            Consulta nuestras promociones y combos especiales.
+        </p>
+
+        <div class="cta-buttons">
+            
+
+            <a href="promociones.html" class="btn-secondary">
+                Ver promociones
+            </a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="site-footer" id="contacto">
+    <div class="container footer__grid">
+      <section aria-labelledby="footer-brand-title">
+        <a class="footer__brand" href="index.html">
+          <img class="footer__logo" src="../img/logo.png" alt="Logo de Warm Coffee" />
+          <span class="footer__title" id="footer-brand-title">Warm Coffee</span>
+        </a>
+        <p class="footer__text">
+          Café de especialidad, postres artesanales y un espacio elegante para compartir tus mejores momentos.
+        </p>
+        <div class="footer__social" aria-label="Redes sociales">
+          <a href="#" aria-label="Instagram de Warm Coffee">Instagram</a>
+          <a href="#" aria-label="Facebook de Warm Coffee">Facebook</a>
+          <a href="#" aria-label="TikTok de Warm Coffee">TikTok</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="footer-contact-title">
+        <h2 class="footer__heading" id="footer-contact-title">Contacto</h2>
+        <ul class="footer__list">
+          <li>Dirección: Av. Aroma 245, Miraflores, Lima</li>
+          <li>Teléfono: +51 987 654 321</li>
+          <li>Correo: hola@warmcoffee.pe</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="footer-hours-title">
+        <h2 class="footer__heading" id="footer-hours-title">Horario de atención</h2>
+        <ul class="footer__list">
+          <li>Lunes a viernes: 7:00 a. m. - 9:00 p. m.</li>
+          <li>Sábados: 8:00 a. m. - 10:00 p. m.</li>
+          <li>Domingos: 8:00 a. m. - 7:00 p. m.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 Warm Coffee. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+
+<script src="../js/menu.js"></script>
+</html>

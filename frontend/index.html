@@ -3,852 +3,380 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Buen Gusto Cafetería</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
+  <meta
+    name="description"
+    content="Warm Coffee, cafetería de especialidad con postres artesanales, promociones y reservas."
   />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --brown: #8b5e34;
-      --brown-dark: #3a2415;
-      --brown-soft: #b98b5e;
-      --cream: #fff7ed;
-      --cream-2: #f2dfc7;
-      --white: #ffffff;
-      --text: #2b211a;
-      --muted: #75665b;
-      --shadow: 0 25px 60px rgba(58, 36, 21, 0.18);
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      overflow-x: hidden;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .header {
-      width: 100%;
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-      background: rgba(255, 247, 237, 0.82);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(139, 94, 52, 0.15);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .logo img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: #fff;
-      padding: 5px;
-      box-shadow: 0 8px 25px rgba(58, 36, 21, 0.12);
-    }
-
-    .logo-text h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 25px;
-      color: var(--brown-dark);
-      line-height: 1;
-    }
-
-    .logo-text span {
-      font-size: 12px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--brown);
-      font-weight: 600;
-    }
-
-    .navbar {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .navbar a {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--brown-dark);
-      position: relative;
-      transition: 0.3s ease;
-    }
-
-    .navbar a::after {
-      content: "";
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      background: var(--brown);
-      left: 0;
-      bottom: -7px;
-      transition: 0.3s ease;
-    }
-
-    .navbar a:hover {
-      color: var(--brown);
-    }
-
-    .navbar a:hover::after {
-      width: 100%;
-    }
-
-    .hero {
-      min-height: 100vh;
-      padding: 130px 8% 70px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 70px;
-      position: relative;
-      background:
-        radial-gradient(circle at 15% 20%, rgba(185, 139, 94, 0.28), transparent 28%),
-        radial-gradient(circle at 88% 20%, rgba(139, 94, 52, 0.18), transparent 30%),
-        linear-gradient(135deg, #fff7ed 0%, #f2dfc7 100%);
-    }
-
-    .hero::before {
-      content: "BUEN GUSTO";
-      position: absolute;
-      right: -80px;
-      bottom: 20px;
-      font-size: 140px;
-      font-weight: 800;
-      letter-spacing: 10px;
-      color: rgba(139, 94, 52, 0.055);
-      pointer-events: none;
-    }
-
-    .hero-text {
-      position: relative;
-      z-index: 2;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.65);
-      border: 1px solid rgba(139, 94, 52, 0.18);
-      padding: 10px 18px;
-      border-radius: 999px;
-      color: var(--brown);
-      font-weight: 700;
-      font-size: 14px;
-      margin-bottom: 26px;
-      box-shadow: 0 10px 30px rgba(58, 36, 21, 0.08);
-    }
-
-    .badge span {
-      width: 9px;
-      height: 9px;
-      background: var(--brown);
-      border-radius: 50%;
-      box-shadow: 0 0 0 6px rgba(139, 94, 52, 0.16);
-    }
-
-    .hero h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(50px, 7vw, 92px);
-      line-height: 0.95;
-      color: var(--brown-dark);
-      max-width: 780px;
-    }
-
-    .hero h1 strong {
-      color: var(--brown);
-      position: relative;
-    }
-
-    .hero p {
-      margin-top: 26px;
-      max-width: 620px;
-      font-size: 18px;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 38px;
-    }
-
-    .btn {
-      padding: 15px 30px;
-      border-radius: 999px;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      transition: 0.3s ease;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--brown);
-      color: white;
-      box-shadow: 0 14px 35px rgba(139, 94, 52, 0.35);
-    }
-
-    .btn-primary:hover {
-      background: var(--brown-dark);
-      transform: translateY(-4px);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.55);
-      color: var(--brown-dark);
-      border: 1px solid rgba(139, 94, 52, 0.25);
-    }
-
-    .btn-secondary:hover {
-      background: white;
-      transform: translateY(-4px);
-    }
-
-    .hero-stats {
-      display: flex;
-      gap: 28px;
-      flex-wrap: wrap;
-      margin-top: 50px;
-    }
-
-    .stat {
-      background: rgba(255, 255, 255, 0.55);
-      border: 1px solid rgba(139, 94, 52, 0.12);
-      border-radius: 22px;
-      padding: 18px 22px;
-      min-width: 135px;
-      box-shadow: 0 12px 28px rgba(58, 36, 21, 0.08);
-    }
-
-    .stat h3 {
-      font-size: 29px;
-      color: var(--brown-dark);
-    }
-
-    .stat span {
-      font-size: 13px;
-      color: var(--muted);
-      font-weight: 500;
-    }
-
-    .hero-image {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 520px;
-    }
-
-    .circle {
-      width: 430px;
-      height: 430px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, var(--brown-soft), var(--brown));
-      position: absolute;
-      box-shadow: var(--shadow);
-    }
-
-    .circle::before {
-      content: "";
-      position: absolute;
-      inset: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 50%;
-    }
-
-    .hero-image img {
-      position: relative;
-      width: 440px;
-      animation: float 4s ease-in-out infinite;
-      filter: drop-shadow(0 28px 32px rgba(58, 36, 21, 0.28));
-      z-index: 2;
-    }
-
-    .mini-card {
-      position: absolute;
-      z-index: 3;
-      background: rgba(255, 255, 255, 0.78);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(139, 94, 52, 0.13);
-      border-radius: 22px;
-      padding: 16px 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .mini-card.one {
-      top: 70px;
-      right: 5px;
-    }
-
-    .mini-card.two {
-      bottom: 85px;
-      left: 0;
-    }
-
-    .mini-card strong {
-      display: block;
-      color: var(--brown-dark);
-      font-size: 15px;
-    }
-
-    .mini-card span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    @keyframes float {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-16px);
-      }
-    }
-
-    .section {
-      padding: 95px 8%;
-    }
-
-    .section-title {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto 55px;
-    }
-
-    .section-title span {
-      color: var(--brown);
-      font-size: 13px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-    }
-
-    .section-title h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(36px, 5vw, 56px);
-      color: var(--brown-dark);
-      margin-top: 12px;
-    }
-
-    .section-title p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-top: 14px;
-    }
-
-    .products-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 32px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: 0.35s ease;
-      border: 1px solid rgba(139, 94, 52, 0.1);
-    }
-
-    .card:hover {
-      transform: translateY(-12px);
-      box-shadow: 0 35px 70px rgba(58, 36, 21, 0.22);
-    }
-
-    .card-img {
-      height: 260px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: 0.5s ease;
-    }
-
-    .card:hover .card-img img {
-      transform: scale(1.08);
-    }
-
-    .price-tag {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      background: var(--brown-dark);
-      color: white;
-      padding: 9px 15px;
-      border-radius: 999px;
-      font-weight: 800;
-      font-size: 14px;
-    }
-
-    .card-body {
-      padding: 25px;
-    }
-
-    .card-body small {
-      color: var(--brown);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 11px;
-    }
-
-    .card-body h3 {
-      margin-top: 8px;
-      color: var(--brown-dark);
-      font-size: 25px;
-    }
-
-    .card-body p {
-      margin-top: 9px;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 15px;
-    }
-
-    .api-section {
-      margin-top: 50px;
-    }
-
-    .api-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .api-card {
-      background: white;
-      border-radius: 28px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(139, 94, 52, 0.1);
-    }
-
-    .api-card h3 {
-      color: var(--brown-dark);
-      margin-bottom: 12px;
-    }
-
-    .api-card p {
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 18px;
-    }
-
-    .api-card input {
-      width: 100%;
-      padding: 14px;
-      border-radius: 14px;
-      border: 1px solid #ddd;
-      margin-bottom: 14px;
-      font-family: inherit;
-    }
-
-    .mensaje {
-      margin-top: 14px;
-      color: var(--brown-dark);
-      font-weight: 600;
-    }
-
-    .footer {
-      background: #22140c;
-      color: white;
-      text-align: center;
-      padding: 60px 8%;
-    }
-
-    .footer h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 36px;
-      letter-spacing: 2px;
-    }
-
-    .footer p {
-      color: #d8b895;
-      margin: 12px 0 25px;
-    }
-
-    @media (max-width: 980px) {
-      .header {
-        position: relative;
-        flex-direction: column;
-        gap: 18px;
-      }
-
-      .navbar {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 18px;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 70px;
-      }
-
-      .hero p {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-buttons,
-      .hero-stats {
-        justify-content: center;
-      }
-
-      .products-container {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .logo-text {
-        display: none;
-      }
-
-      .hero h1 {
-        font-size: 46px;
-      }
-
-      .circle {
-        width: 290px;
-        height: 290px;
-      }
-
-      .hero-image img {
-        width: 310px;
-      }
-
-      .mini-card {
-        display: none;
-      }
-    }
-  </style>
+  <title>Warm Coffee | Cafetería de Especialidad</title>
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
 <body>
+  <!-- HEADER / NAVBAR -->
+  <header class="site-header header-home">
+    <nav class="navbar container" aria-label="Navegación principal">
+      <a class="navbar__brand" href="#inicio" aria-label="Ir al inicio de Warm Coffee">
+        <img class="navbar__logo" src="../img/logo.png" alt="Logo de Warm Coffee" />
+        <span class="navbar__name">
+          <span class="navbar__title">Warm Coffee</span>
+        </span>
+      </a>
 
-  <header class="header">
-    <a href="#" class="logo">
-      <img src="img/logo.png" alt="Logo Buen Gusto Cafetería" />
-
-      <div class="logo-text">
-        <h3>Buen Gusto</h3>
-        <span>Cafetería</span>
-      </div>
-    </a>
-
-    <nav class="navbar">
-      <a href="#">Inicio</a>
-      <a href="menu.html">Menú</a>
-      <a href="reservas.html">Reservas</a>
-      <a href="promociones.html">Promociones</a>
-      <a href="contacto.html">Contacto</a>
+      <ul class="navbar__menu">
+        <li><a class="navbar__link" href="#inicio">Inicio</a></li>
+        <li><a class="navbar__link" href="menu.html">Menú</a></li>
+        <li><a class="navbar__link" href="promociones.html">Promociones</a></li>
+        <li><a class="navbar__link" href="contacto.html">Contacto</a></li>
+      </ul>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-text">
-      <div class="badge">
-        <span></span>
-        Café artesanal preparado al momento
-      </div>
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <video class="hero-video"
+           autoplay
+           muted
+           loop
+           playsinline>
 
-      <h1>
-        El sabor que acompaña tus
-        <strong>mejores momentos</strong>
-      </h1>
+        <source src="../video/banner.mp4" type="video/mp4">
 
-      <p>
+    </video>
+    <div class="hero-overlay"></div>
+
+  <div class="hero__layout container">
+
+    <div class="hero__content fade-in">
+
+      
+
+      <h1 class="hero__title" id="hero-title">
+  El sabor que acompaña tus
+  <span class="hero__title-accent">mejores momentos</span>
+</h1>
+      <p class="hero__subtitle">
         Un espacio cálido para disfrutar café recién hecho,
         postres caseros y conversaciones que se sienten como en casa.
       </p>
 
-      <div class="hero-buttons">
-        <a href="menu.html" class="btn btn-primary">
-          Ver Menú ☕
-        </a>
+      <div class="hero__actions">
+        <a class="button button--primary" href="menu.html">
+  Ver Menú ☕
+</a>
 
-        <a href="reservas.html" class="btn btn-secondary">
-          Reservar Mesa
-        </a>
+        
       </div>
 
-      <div class="hero-stats">
-        <div class="stat">
-          <h3>+20</h3>
-          <span>Bebidas especiales</span>
+    </div>
+
+  </div>
+</section>
+
+    <!-- SECCIÓN FAVORITOS DE LA CASA -->
+    <section class="section section--cream fade-in" id="favoritos" aria-labelledby="favoritos-title">
+      <div class="container">
+        <div class="section__header fade-in">
+          <span class="section__eyebrow">Favoritos de la casa</span>
+          <h2 class="section__title" id="favoritos-title">Nuestros Favoritos</h2>
+          <p class="section__text">
+            Bebidas y postres elegidos por quienes buscan una pausa dulce, aromática y memorable.
+          </p>
         </div>
 
-        <div class="stat">
-          <h3>100%</h3>
-          <span>Café fresco</span>
+        <div class="favorites-grid">
+          <article class="product-card fade-in" data-product-id="cappuccino" data-category="cafes">
+            <div class="product-card__media">
+              <img src="../img/cappuccino.jpg" alt="Cappuccino servido en taza artesanal" />
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Cappuccino</h3>
+              <p class="product-card__price">S/ 14.00</p>
+              <p class="section__text">
+                Equilibrio perfecto de espresso, leche vaporizada y abundante espuma.
+              </p>
+              <a class="button product-card__button" href="menu.html">Ver más</a>
+            </div>
+          </article>
+
+          <article class="product-card fade-in" data-product-id="cold-brew" data-category="frios">
+            <div class="product-card__media">
+              <img src="../img/cold-brew.jpg" alt="Cold Brew servido con hielo" />
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Cold Brew</h3>
+              <p class="product-card__price">S/ 16.00</p>
+              <p class="section__text">
+                Café extraído en frío durante 18 horas, extra suave y refrescante.
+              </p>
+              <a class="button product-card__button" href="menu.html">Ver más</a>
+            </div>
+          </article>
+
+          <article class="product-card fade-in" data-product-id="cheesecake-frutos-rojos" data-category="postres">
+            <div class="product-card__media">
+              <img src="../img/cheesecake.jpg" alt="Cheesecake de frutos rojos con base crocante" />
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Cheesecake de Frutos Rojos</h3>
+              <p class="product-card__price">S/ 16.00</p>
+              <p class="section__text">
+                Cremoso y con una base crocante de galleta.
+              </p>
+              <a class="button product-card__button" href="menu.html">Ver más</a>
+            </div>
+          </article>
+
+          <article class="product-card fade-in" data-product-id="avocado-toast" data-category="saladas">
+            <div class="product-card__media">
+              <img src="../img/avocado-toast.jpg" alt="Avocado Toast servido en pan rústico" />
+            </div>
+            <div class="product-card__body">
+              <h3 class="product-card__name">Avocado Toast</h3>
+              <p class="product-card__price">S/ 22.00</p>
+              <p class="section__text">
+                Rebanada de pan rústico con guacamole artesanal, huevo poché y un toque de chili flakes.
+              </p>
+              <a class="button product-card__button" href="menu.html">Ver más</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PROMOCIONES -->
+    <section class="section section--white fade-in" id="promociones" aria-labelledby="promociones-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Momentos para compartir</span>
+          <h2 class="section__title" id="promociones-title">Promociones Especiales</h2>
+          <p class="section__text">
+            Beneficios cálidos para disfrutar en pareja, con amigos o durante tu pausa favorita del día.
+          </p>
         </div>
 
-        <div class="stat">
-          <h3>2x1</h3>
-          <span>Todos los viernes</span>
+        <div class="promotions-grid">
+          <article class="promotion-card fade-in" data-promotion-code="CAPPUCCINO2X1">
+            <span class="promotion-card__label">Todos los martes</span>
+            <h3 class="promotion-card__title">2x1 en Cappuccino</h3>
+            <p class="promotion-card__text">
+              Comparte dos cappuccinos cremosos pagando solo uno durante la tarde.
+            </p>
+            <a class="promotion-card__link" href="promociones.html">Ver promoción</a>
+          </article>
+
+          <article class="promotion-card fade-in" data-promotion-code="POSTRES15">
+            <span class="promotion-card__label">Postres de autor</span>
+            <h3 class="promotion-card__title">15% de descuento en postres</h3>
+            <p class="promotion-card__text">
+              Endulza tu visita con cheesecakes, brownies y piezas artesanales seleccionadas.
+            </p>
+            <a class="promotion-card__link" href="promociones.html">Ver promoción</a>
+          </article>
+
+          <article class="promotion-card fade-in" data-promotion-code="DESAYUNOESPECIAL">
+            <span class="promotion-card__label">Hasta las 11:00 a. m.</span>
+            <h3 class="promotion-card__title">Combo desayuno especial</h3>
+            <p class="promotion-card__text">
+              Café americano, sándwich artesanal y jugo natural para comenzar mejor.
+            </p>
+            <a class="promotion-card__link" href="promociones.html">Ver promoción</a>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="hero-image">
-      <div class="circle"></div>
+    <!-- SECCIÓN CATEGORÍAS -->
+    <section class="section section--cream fade-in" id="categorias" aria-labelledby="categorias-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Carta Warm Coffee</span>
+          <h2 class="section__title" id="categorias-title">Explora Nuestro Menú</h2>
+          <p class="section__text">
+            Una selección equilibrada entre clásicos, especialidades, opciones frescas y propuestas ligeras.
+          </p>
+        </div>
 
-      <img
-        src="img/cafe-hero.png"
-        alt="Café principal de Buen Gusto"
-      />
+        <div class="categories-grid">
+          <article class="category-card fade-in" data-menu-category="cafeteria-clasica">
+            <span class="category-card__icon" aria-hidden="true">&#9749;</span>
+            <h3 class="category-card__title">Cafetería Clásica & Especialidades</h3>
+            <p class="category-card__text">
+              El alma de nuestra casa. Trabajamos exclusivamente con granos de especialidad 100% Arábica,
+              seleccionados de fincas sostenibles y tostados al punto perfecto. Desde la intensidad de un
+              espresso purista hasta la delicadeza de un latte perfectamente texturizado; cada taza es una
+              obra de arte calibrada al milímetro por nuestros baristas.
+            </p>
+          </article>
 
-      <div class="mini-card one">
-        <strong>Especial de la casa</strong>
-        <span>Latte vainilla cremoso</span>
+          <article class="category-card fade-in" data-menu-category="bebidas-frias">
+            <span class="category-card__icon" aria-hidden="true">&#10052;</span>
+            <h3 class="category-card__title">Bebidas Frías & Frappés</h3>
+            <p class="category-card__text">
+              El lado más refrescante del café y la textura que enamora. Aquí combinamos la energía de
+              nuestras extracciones en frío con la cremosidad del hielo frappé y toques dulces. Perfectos
+              para los días de calor o para quienes buscan un capricho helado, enérgico y lleno de sabor.
+            </p>
+          </article>
+
+          <article class="category-card fade-in" data-menu-category="te-infusiones">
+            <span class="category-card__icon" aria-hidden="true">&#127861;</span>
+            <h3 class="category-card__title">Té & Infusiones</h3>
+            <p class="category-card__text">
+              Un viaje de aromas y bienestar en cada hebra. Seleccionamos cuidadosamente hojas sueltas,
+              flores y especias del mundo para ofrecerte una experiencia reconfortante. Desde nuestro
+              especiado y enérgico Chai hasta infusiones frutales libres de teína, ideales para pausar
+              el día y conectar con tus sentidos.
+            </p>
+          </article>
+
+          <article class="category-card fade-in" data-menu-category="pasteleria">
+            <span class="category-card__icon" aria-hidden="true">&#127856;</span>
+            <h3 class="category-card__title">Pastelería & Bollería</h3>
+            <p class="category-card__text">
+              El acompañante perfecto de una buena taza. Horneamos diariamente de manera artesanal,
+              utilizando mantequilla real e ingredientes frescos. Disfruta de la textura crujiente de
+              nuestras masas hojaldradas, la esponjosidad de nuestros bizcochos y la dulzura justa de
+              nuestros postres clásicos.
+            </p>
+          </article>
+
+          <article class="category-card fade-in" data-menu-category="opciones-saladas">
+            <span class="category-card__icon" aria-hidden="true">&#129386;</span>
+            <h3 class="category-card__title">Opciones Saladas</h3>
+            <p class="category-card__text">
+              Mordiscos que reconfortan a cualquier hora. Elaborados al momento con panes de masa madre
+              y baguettes rústicas, nuestros sándwiches y tostadas combinan ingredientes frescos, quesos
+              fundidos y aderezos de la casa. La opción ideal para un desayuno completo, un almuerzo
+              ligero o un brunch sin prisas.
+            </p>
+          </article>
+
+          <article class="category-card fade-in" data-menu-category="opciones-saludables-bowls">
+            <span class="category-card__icon" aria-hidden="true">&#129379;</span>
+            <h3 class="category-card__title">Opciones Saludables & Bowls</h3>
+            <p class="category-card__text">
+              Energía natural y nutrientes para activar tu cuerpo. Platos coloridos elaborados con
+              superalimentos, frutas frescas de temporada, yogures naturales y opciones libres de
+              azúcares refinados. Porque comer bien también puede ser un placer delicioso y vibrante.
+            </p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="mini-card two">
-        <strong>Postres caseros</strong>
-        <span>Perfectos para acompañar</span>
+    <!-- SECCIÓN MÉTODOS DE PAGO -->
+    <section class="section section--white fade-in" id="pagos" aria-labelledby="pagos-title">
+      <div class="container">
+        <div class="section__header">
+          <span class="section__eyebrow">Compra fácil y segura</span>
+          <h2 class="section__title" id="pagos-title">Métodos de Pago</h2>
+          <p class="section__text">
+            Aceptamos pagos rápidos, digitales y tradicionales para que disfrutes sin complicaciones.
+          </p>
+        </div>
+
+        <ul class="payments-list" aria-label="Métodos de pago disponibles">
+          <li class="payment-card fade-in" data-payment-method="visa">
+            <img src="../img/pagos/visa.png" alt="Visa" class="payment-card__icon">
+            <span class="payment-card__name">Visa</span>
+          </li>
+          <li class="payment-card fade-in" data-payment-method="mastercard">
+            <img src="../img/pagos/mastercard.png" alt="Mastercard" class="payment-card__icon">
+            <span class="payment-card__name">Mastercard</span>
+          </li>
+          <li class="payment-card fade-in" data-payment-method="yape">
+            <img src="../img/pagos/yape.png" alt="Yape" class="payment-card__icon">
+            <span class="payment-card__name">Yape</span>
+          </li>
+          <li class="payment-card fade-in" data-payment-method="plin">
+            <img src="../img/pagos/plin.png" alt="Plin" class="payment-card__icon">
+            <span class="payment-card__name">Plin</span>
+          </li>
+          <li class="payment-card fade-in" data-payment-method="efectivo">
+            <span class="payment-card__icon payment-card__icon--text" aria-hidden="true">S/.</span>
+            <span class="payment-card__name">Efectivo</span>
+          </li>
+        </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section products">
-    <div class="section-title">
-      <span>Nuestros favoritos</span>
+    <!-- SECCIÓN SOBRE NOSOTROS -->
+    <section class="section about fade-in" id="nosotros" aria-labelledby="nosotros-title">
+      <div class="container about__grid">
+        <div class="about__media">
+          <img src="../img/barista.jpg" alt="Barista preparando café de especialidad en Warm Coffee" />
+        </div>
 
-      <h2>Lo más pedido de la casa</h2>
-
-      <p>
-        Sabores suaves, aromas intensos y postres preparados
-        para convertir una pausa cualquiera en un momento especial.
-      </p>
-    </div>
-
-    <div class="products-container" id="productos-container">
-
-    </div>
-
-    <!-- NUEVA SECCIÓN API -->
-    <div class="api-section">
-
-      <div class="section-title">
-        <span>Conectado con Supabase</span>
-
-        <h2>Registro de clientes</h2>
-
-        <p>
-          Esta sección guarda datos reales en la base de datos PostgreSQL de Supabase.
-        </p>
-      </div>
-
-      <div class="api-grid">
-
-        <div class="api-card">
-          <h3>Registrar Cliente</h3>
-
-          <p>
-            Guarda clientes directamente en la base de datos.
+        <div class="about__content fade-in">
+          <span class="section__eyebrow">Sobre nosotros</span>
+          <h2 class="about__title" id="nosotros-title">Una cafetería pensada para quedarte un momento más</h2>
+          <p class="about__intro">
+            Warm Coffee nace como un refugio urbano para quienes disfrutan el café bien preparado,
+            la pastelería artesanal y los espacios tranquilos con atención cercana.
           </p>
 
-          <input
-            type="text"
-            id="nombre"
-            placeholder="Nombre"
-          />
+          <article class="about__item fade-in">
+            <h3>Historia</h3>
+            <p>
+              Comenzamos con una barra pequeña, granos cuidadosamente elegidos y la idea de crear
+              un lugar donde cada visita se sienta cálida, simple y especial.
+            </p>
+          </article>
 
-          <input
-            type="text"
-            id="apellido"
-            placeholder="Apellido"
-          />
-
-          <input
-            type="email"
-            id="correo"
-            placeholder="Correo"
-          />
-
-          <input
-            type="text"
-            id="telefono"
-            placeholder="Teléfono"
-          />
-
-          <button class="btn btn-primary" onclick="registrarCliente()">
-            Registrar Cliente
-          </button>
-
-          <div id="mensaje" class="mensaje"></div>
+          <article class="about__item fade-in">
+            <h3>Misión</h3>
+            <p>
+              Servir experiencias memorables a través de café de calidad, recetas honestas y un
+              ambiente acogedor para conversar, trabajar o descansar.
+            </p>
+          </article>
         </div>
-
       </div>
+    </section>
+  </main>
+
+  <!-- FOOTER / CONTACTO -->
+  <footer class="site-footer" id="contacto">
+    <div class="container footer__grid">
+      <section aria-labelledby="footer-brand-title">
+        <a class="footer__brand" href="#inicio">
+          <img class="footer__logo" src="../img/logo.png" alt="Logo de Warm Coffee" />
+          <span class="footer__title" id="footer-brand-title">Warm Coffee</span>
+        </a>
+        <p class="footer__text">
+          Café de especialidad, postres artesanales y un espacio elegante para compartir tus mejores momentos.
+        </p>
+        <div class="footer__social" aria-label="Redes sociales">
+          <a href="#" aria-label="Instagram de Warm Coffee">Instagram</a>
+          <a href="#" aria-label="Facebook de Warm Coffee">Facebook</a>
+          <a href="#" aria-label="TikTok de Warm Coffee">TikTok</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="footer-contact-title">
+        <h2 class="footer__heading" id="footer-contact-title">Contacto</h2>
+        <ul class="footer__list">
+          <li>Dirección: Av. Aroma 245, Miraflores, Lima</li>
+          <li>Teléfono: +51 987 654 321</li>
+          <li>Correo: hola@warmcoffee.pe</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="footer-hours-title">
+        <h2 class="footer__heading" id="footer-hours-title">Horario de atención</h2>
+        <ul class="footer__list">
+          <li>Lunes a viernes: 7:00 a. m. - 9:00 p. m.</li>
+          <li>Sábados: 8:00 a. m. - 10:00 p. m.</li>
+          <li>Domingos: 8:00 a. m. - 7:00 p. m.</li>
+        </ul>
+      </section>
     </div>
-  </section>
 
-  <footer class="footer">
-    <h3>BUEN GUSTO CAFETERÍA</h3>
-
-    <p>
-      Tu nuevo lugar de encuentro en el barrio.
-    </p>
-
-    <small>
-      © 2026 Buen Gusto Cafetería.
-      Todos los derechos reservados.
-    </small>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Warm Coffee. Todos los derechos reservados.</p>
+    </div>
   </footer>
-
-  <script>
-
-    // =========================
-    // CARGAR PRODUCTOS DESDE API
-    // =========================
-
-    async function cargarProductos() {
-
-      try {
-
-        const respuesta = await fetch("/api/productos");
-
-        const productos = await respuesta.json();
-
-        const contenedor = document.getElementById("productos-container");
-
-        contenedor.innerHTML = "";
-
-        productos.forEach(producto => {
-
-          contenedor.innerHTML += `
-            <article class="card">
-
-              <div class="card-img">
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <div class="price-tag">
-                  S/. ${producto.precio}
-                </div>
-              </div>
-
-              <div class="card-body">
-                <small>${producto.categoria}</small>
-
-                <h3>${producto.nombre}</h3>
-
-                <p>${producto.descripcion}</p>
-              </div>
-
-            </article>
-          `;
-        });
-
-      } catch (error) {
-
-        console.log(error);
-
-      }
-    }
-
-    cargarProductos();
-
-
-    // =========================
-    // REGISTRAR CLIENTE
-    // =========================
-
-    async function registrarCliente() {
-
-      const nombre = document.getElementById("nombre").value;
-
-      const apellido = document.getElementById("apellido").value;
-
-      const correo = document.getElementById("correo").value;
-
-      const telefono = document.getElementById("telefono").value;
-
-      try {
-
-        const respuesta = await fetch("/api/clientes", {
-
-          method: "POST",
-
-          headers: {
-            "Content-Type": "application/json"
-          },
-
-          body: JSON.stringify({
-            nombre,
-            apellido,
-            correo,
-            telefono
-          })
-
-        });
-
-        const data = await respuesta.json();
-
-        document.getElementById("mensaje").innerText =
-          data.mensaje;
-
-      } catch (error) {
-
-        console.log(error);
-
-        document.getElementById("mensaje").innerText =
-          "Error al registrar cliente";
-
-      }
-    }
-
-  </script>
-
+  <script src="../js/app.js"></script>
 </body>
 </html>

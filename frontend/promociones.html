@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promociones | Warm Coffee</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/promociones.css">
+</head>
+<body>
+
+    <header class="site-header">
+    <nav class="navbar container">
+
+      <a class="navbar__brand" href="index.html">
+        <img class="navbar__logo" src="../img/logo.png" alt="Logo Warm Coffee">
+        <span class="navbar__name">
+          <span class="navbar__title">Warm Coffee</span>
+        </span>
+      </a>
+
+      <ul class="navbar__menu">
+        <li><a class="navbar__link" href="index.html">Inicio</a></li>
+        <li><a class="navbar__link navbar__link--active" href="menu.html">Menú</a></li>
+        <li><a class="navbar__link" href="promociones.html">Promociones</a></li>
+        <li><a class="navbar__link" href="contacto.html">Contacto</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+    <section class="hero-promociones">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content fade-in">
+            <span class="hero-subtitle">Momentos para compartir</span>
+            <h1 class="hero-title">Promociones Especiales</h1>
+            <p class="hero-text">Beneficios exclusivos para disfrutar de tu café favorito en pareja, con amigos o durante tu pausa del día.</p>
+        </div>
+    </section>
+
+    <main class="promociones-section container">
+        <div class="promociones-header fade-in">
+            <p>Mostrando <strong id="promo-counter">0</strong> promociones activas</p>
+        </div>
+        
+        <div id="promociones-container" class="promociones-grid">
+            </div>
+    </main>
+
+    <section class="cta-section container fade-in">
+        <div class="cta-box">
+            <div class="cta-icon">📞</div>
+            <div class="cta-text">
+                <h2>¿Tienes alguna consulta?</h2>
+                <p>Escríbenos por WhatsApp y te ayudaremos encantados.</p>
+            </div>
+            <a href="#" class="btn-whatsapp">Ir a WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="site-footer" id="contacto">
+    <div class="container footer__grid">
+      <section aria-labelledby="footer-brand-title">
+        <a class="footer__brand" href="index.html">
+          <img class="footer__logo" src="../img/logo.png" alt="Logo de Warm Coffee" />
+          <span class="footer__title" id="footer-brand-title">Warm Coffee</span>
+        </a>
+        <p class="footer__text">
+          Café de especialidad, postres artesanales y un espacio elegante para compartir tus mejores momentos.
+        </p>
+        <div class="footer__social" aria-label="Redes sociales">
+          <a href="#" aria-label="Instagram de Warm Coffee">Instagram</a>
+          <a href="#" aria-label="Facebook de Warm Coffee">Facebook</a>
+          <a href="#" aria-label="TikTok de Warm Coffee">TikTok</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="footer-contact-title">
+        <h2 class="footer__heading" id="footer-contact-title">Contacto</h2>
+        <ul class="footer__list">
+          <li>Dirección: Av. Aroma 245, Miraflores, Lima</li>
+          <li>Teléfono: +51 987 654 321</li>
+          <li>Correo: hola@warmcoffee.pe</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="footer-hours-title">
+        <h2 class="footer__heading" id="footer-hours-title">Horario de atención</h2>
+        <ul class="footer__list">
+          <li>Lunes a viernes: 7:00 a. m. - 9:00 p. m.</li>
+          <li>Sábados: 8:00 a. m. - 10:00 p. m.</li>
+          <li>Domingos: 8:00 a. m. - 7:00 p. m.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="footer__bottom">
+      <p>&copy; 2026 Warm Coffee. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+    <div id="promo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <span id="modal-badge" class="badge"></span>
+                <h2 id="modal-title" class="modal-title"></h2>
+                <p id="modal-desc" class="modal-desc"></p>
+                <div class="modal-info">
+                    <p><strong>Vigencia:</strong> <span id="modal-date"></span></p>
+                </div>
+                <button class="btn-primary modal-btn">Aplicar Promoción</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/promociones.js"></script>
+</body>
+</html>
